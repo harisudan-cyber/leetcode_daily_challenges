@@ -1,0 +1,32 @@
+class Solution {
+    public int smallestNumber(int n, int t) {
+        int mul=1;
+        int b=n;
+      while(b>0){
+        int d=b%10;
+        if(d==0){
+            return n;
+        }
+        mul*=d;
+        b/=10;
+      }  
+      if(mul%t==0){
+        return n;
+      }
+        int i=n+1,mul1;
+        while(i>b){
+             mul1=1;
+             int temp=i;
+        while(temp!=0){
+            int e=temp%10;
+            mul1*=e;
+            temp=temp/10;
+        }
+        if(mul1%t==0){
+            return i;
+        }
+        i++;
+        }
+      return 1;
+    }
+}
